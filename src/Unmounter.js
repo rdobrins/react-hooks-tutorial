@@ -10,6 +10,7 @@ function Unmounter() {
     console.log('MOUNTED!!!')
     window.addEventListener('click', clickEvent);
 
+    // Lets see the unmount in action
     return () => {
       console.log('unmounted...')
       window.removeEventListener('click', clickEvent);
