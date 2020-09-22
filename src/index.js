@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App0 from './App0';
 import App1 from './App1';
 import App2 from './App2';
 import App3 from './App3';
@@ -11,6 +12,8 @@ import * as serviceWorker from './serviceWorker';
 
 function DetermineApp(int) {
   switch (int) {
+    case 0:
+      return <App0/>;
     case 1:
       return <App1/>;
     case 2:
@@ -28,7 +31,7 @@ function DetermineApp(int) {
 
 ReactDOM.render(
   <React.StrictMode>
-    { DetermineApp(1) }
+    { DetermineApp(0) }
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -37,6 +37,12 @@
   }
 }
 
+.intro-header {
+  width: 100%;
+  text-align: center;
+  margin: 50px 0;
+}
+
 .count-container,
 .form-container {
   display: flex;
