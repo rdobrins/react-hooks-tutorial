@@ -34,7 +34,10 @@ function App6() {
     <div className="numbers-container">
       { loading ? 'loading ...' : <IntegerResults/> }
       <h1>{integer}</h1>
-      <button onClick={() => setInteger(integer + 1)}>+</button>
+      <div className="numbers-buttons-container">
+        <button onClick={() => setInteger(integer + 1)}>+</button>
+        <button onClick={() => setInteger(integer - 1)}>-</button>
+      </div>
     </div>
   );
 }

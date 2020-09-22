@@ -79,3 +79,29 @@
   justify-content: center;
   width: 100%;
 }
+
+.numbers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0
+}
+
+.numbers-container h1 {
+  max-width: 600px;
+  text-align: center;
+}
+
+.numbers-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.numbers-buttons-container Button {
+  font-size: 40px;
+  padding: 10px 30px;
+  margin: 0 20px;
+}
