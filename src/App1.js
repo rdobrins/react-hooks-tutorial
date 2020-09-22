@@ -12,9 +12,15 @@ function App1() {
   //   return 0
   // }
 
+  // function AddOne() {
+  //   setCount(count + 1);
+  // }
+
   return (
     <div className="count-container">
-      <button className="count-button" onClick = {() => countArray[1](currentState => currentState + 1)}>+ Add to count</button>
+      <button className="count-button" onClick = {() => countArray[1](currentState => currentState + 1)}>
+        + Add to count
+      </button>
       <div>{countArray[0]}</div>
     </div>
   );
