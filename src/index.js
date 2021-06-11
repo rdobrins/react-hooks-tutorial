@@ -9,6 +9,7 @@ import App4 from './App4';
 import App5 from './App5';
 import App6 from './App6';
 import App7 from './App7';
+import App9 from './App9';
 import * as serviceWorker from './serviceWorker';
 
 function DetermineApp(int) {
@@ -29,12 +30,14 @@ function DetermineApp(int) {
       return <App6/>;
     case 7:
       return <App7/>;
+    case 9:
+      return <App9/>;
   }
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    { DetermineApp(7) }
+    { DetermineApp(9) }
   </React.StrictMode>,
   document.getElementById('root')
 );
