@@ -1,28 +1,20 @@
-import React, { useContext, useState } from 'react'
+import React, { useState, createContext } from 'react'
 
-const SideContext = React.createContext()
-const UpdateSideContext = React.createContext()
+export const SideContext = createContext()
 
-export function useSide() {
-  return useContext(SideContext)
-}
-
-export function useUpdateSide() {
-  return useContext(UpdateSideContext)
-}
-
-export function SideProvider({ children }) {
+export const SideProvider = ({ children }) => {
   const [leftSide, setLeftSide] = useState(true)
 
-  function toggleSide() {
-    setLeftSide(prevLeftSide => !prevLeftSide)
+  const toggleSide = () => {
+    setLeftSide(!leftSide)
   }
 
   return (
-    <SideContext.Provider value={leftSide}>
-      <UpdateSideContext.Provider value={toggleSide}>
-        {children}
-      </UpdateSideContext.Provider>
+    <SideContext.Provider value={{
+      leftSide,
+      toggleSide
+    }}>
+      {children}
     </SideContext.Provider>
   )
 }

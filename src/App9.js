@@ -1,32 +1,41 @@
-import React, { useState, Fragment, useMemo } from 'react'
+import React, { Fragment, useState, useMemo, useEffect } from 'react'
+import './App.css';
 
-const getSquareRoot = (number) => {
-  return Math.sqrt(number)
+const GrandChild = ({number}) => {
+  return(
+    <div className='grandChildContainer'>
+      { `GrandChild ${number}` }
+    </div>
+  )
+}
+
+const Child = ({number}) => {
+  const isEven = number%2 === 0
+
+  const memoizeGrandChild = useMemo(() => {
+    return <GrandChild number={number}/>
+  }, [isEven])
+
+  return (
+    <div className='childContainer'>
+      { `Child ${number}` }
+      {memoizeGrandChild}
+    </div>
+  )
 }
 
 const App9 = () => {
-  const [memoNumber, setMemoNumber] = useState(81)
+  const [number, setNumber] = useState(1)
 
-  const squareRootOfNumber = useMemo(() => {
-    return <span>The square root of {memoNumber} is {getSquareRoot(memoNumber)}</span>
-  }, [memoNumber])
-
-  return(
-    <Fragment>
-      <button onClick={() => { setMemoNumber(144) }}>
-        144
-      </button>
-      <button onClick={() => { setMemoNumber(81) }}>
-        81
-      </button>
-      <button onClick={() => { setMemoNumber(16) }}>
-        16
-      </button>
-      <button onClick={() => { setMemoNumber(4) }}>
-        4
-      </button>
-      {squareRootOfNumber}
-    </Fragment>
+  return (
+    <div className='initialContainer'>
+      {`App9 `}
+      <button onClick={() => setNumber(1)}>1</button>
+      <button onClick={() => setNumber(2)}>2</button>
+      <button onClick={() => setNumber(3)}>3</button>
+      <button onClick={() => setNumber(4)}>4</button>
+      <Child number={number}/>
+    </div>
   )
 }
 

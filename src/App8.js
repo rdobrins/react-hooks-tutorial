@@ -1,9 +1,9 @@
-import React from 'react'
-import { useSide, useUpdateSide } from './SideContext'
+import React, { useContext } from 'react'
+import { SideContext } from './SideContext'
 
 const App8 = () => {
-  const leftSide = useSide()
-  const toggleSide = useUpdateSide()
+  const { leftSide, toggleSide } = useContext(SideContext)
+
   const floatSideStyle = {
     display: 'flex',
     justifyContent: leftSide ? 'flex-start' : 'flex-end',
