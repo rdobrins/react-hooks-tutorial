@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import './App.css';
 
 const GrandChild = ({number}) => {
