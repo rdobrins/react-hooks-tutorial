@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import HandleForm from './HandleForm';
 
 function App6() {
   const [loading, setLoading] = useState(false);
@@ -15,11 +14,11 @@ function App6() {
     fetchResults();
   }, [integer])
 
-  function IntegerResults() {
+  const IntegerResults = () => {
     return <h1>{results}</h1>;
   }
 
-  function fetchResults() {
+  const fetchResults = () => {
     setLoading(true);
     fetch(`http://numbersapi.com/${integer}`)
       .then(response => response.text())
@@ -30,13 +29,21 @@ function App6() {
       );
   }
 
+  const addOne = () => {
+    setInteger(integer + 1)
+  }
+
+  const subtractOne = () => {
+    setInteger(integer - 1)
+  }
+
   return (
     <div className="numbers-container">
       { loading ? 'loading ...' : <IntegerResults/> }
       <h1>{integer}</h1>
       <div className="numbers-buttons-container">
-        <button onClick={() => setInteger(integer + 1)}>+</button>
-        <button onClick={() => setInteger(integer - 1)}>-</button>
+        <button onClick={addOne}>+</button>
+        <button onClick={subtractOne}>-</button>
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ function DetermineApp(int) {
 
 ReactDOM.render(
   <React.StrictMode>
-    { DetermineApp(9) }
+    { DetermineApp(6) }
   </React.StrictMode>,
   document.getElementById('root')
 );
