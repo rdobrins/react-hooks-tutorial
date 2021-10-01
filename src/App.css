@@ -129,3 +129,49 @@
   padding: 20px;
   border: 1px solid #000;
 }
+
+div.useRefContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 700px;
+}
+
+div.useRefContainer.case2 {
+  flex-direction: column;
+}
+
+input.focusInput {
+  margin: 30px;
+}
+
+button.focusBtn {
+}
+
+div.colorBoxes {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  justify-content: space-around;
+}
+
+div.colorBox {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+div.colorButtons {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button.colorBtn {
+}
