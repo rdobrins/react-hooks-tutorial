@@ -9,10 +9,12 @@ const App10 = () => {
   ////////// Part 1 //////////
 
   let ryansRef = useRef(null)
+  let otherRef = useRef(null)
 
   const focusInputField = () => {
     console.log(ryansRef.current)
     console.log(ryansRef.current.value)
+    otherRef.current.value = ryansRef.current.value
     ryansRef.current.focus()
   }
 
@@ -49,7 +51,8 @@ const App10 = () => {
     <Fragment>
       <div className='useRefContainer'>
         <label>Case 1:</label>
-        <input className='focusInput' ref={ryansRef} />
+        <input className='focusInput' placeholder={'ryansRef'} ref={ryansRef} />
+        <input className='focusInput' placeholder={'otherRef'} ref={otherRef} />
         <button className='focusBtn' onClick={focusInputField}>Focus Button</button>
       </div>
 
