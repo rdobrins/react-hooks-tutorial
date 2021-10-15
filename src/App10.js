@@ -1,6 +1,6 @@
 import React, { Fragment, useRef, useState, useEffect } from 'react'
 
-const App10 = () => {
+const App10 = (props) => {
 
   useEffect(() => {
     console.log('COMPONENT RENDERED')

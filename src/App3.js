@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import HandleForm from './HandleForm';
 
-function App3() {
+function App3(props) {
   const [firstFormValues, setFirstFormValue] = HandleForm({firstName: "", lastName: "", email: "", password: ""});
   const [secondFormValues, setSecondFormValue] = HandleForm({firstName: "", lastName: "", email: "", password: ""});
 

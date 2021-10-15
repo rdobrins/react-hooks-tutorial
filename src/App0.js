@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function App0() {
+function App0(props) {
   return (
     <>
       <h1 className="intro-header">

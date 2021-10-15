@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function App1() {
+function App1(props) {
   const countArray = React.useState(0);
 
   // const [count, setCount] = useState(0);

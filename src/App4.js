@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import './App.css';
 import HandleForm from './HandleForm';
 
-function App4() {
+function App4(props) {
   const [form, valueChange] = HandleForm({firstName: "", middleName: "", lastName: ""});
 
   // Will run on any and every state change

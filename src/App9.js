@@ -24,7 +24,7 @@ const Child = ({number}) => {
   )
 }
 
-const App9 = () => {
+const App9 = (props) => {
   const [number, setNumber] = useState(1)
 
   return (

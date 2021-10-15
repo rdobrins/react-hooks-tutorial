@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function App6() {
+function App6(props) {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState(null);
   const [integer, setInteger] = useState(0);

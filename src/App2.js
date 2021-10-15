@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function App2() {
+function App2(props) {
   const [{ count1, count2, count3, count4 }, setCount] = useState({count1: 0, count2: 100, count3: 200, count4: 400});
 
   return (

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Unmounter from './Unmounter';
 
-function App5() {
+function App5(props) {
   const [mounted, setMounted] = useState(true);
 
   return (

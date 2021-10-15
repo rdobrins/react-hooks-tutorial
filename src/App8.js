@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { SideContext } from './SideContext'
 
-const App8 = () => {
+const App8 = (props) => {
   const { leftSide, toggleSide } = useContext(SideContext)
 
   const floatSideStyle = {
