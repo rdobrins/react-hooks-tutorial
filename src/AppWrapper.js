@@ -9,8 +9,14 @@ import App6 from './App6';
 import App7 from './App7';
 import App9 from './App9';
 import App10 from './App10';
+import App11 from './App11';
 import HomeApp from './HomeApp';
 import { Route, Switch, BrowserRouter as Router, Link } from 'react-router-dom';
+import styled from 'styled-components'
+
+const DirectionalLink = styled.div`
+  cursor: pointer;
+`
 
 const AppWrapper = (props) => {
   const [currentApp, setCurrentApp] = useState(0)
@@ -22,23 +28,23 @@ const AppWrapper = (props) => {
       <Router>
         <div className='directionalBtns'>
           { backApp >= 0 &&
-            <a onClick={ () => { setCurrentApp(backApp) } }>
+            <DirectionalLink onClick={ () => { setCurrentApp(backApp) } }>
               <Link to={`/${backApp}`}>
                 Back
               </Link>
-            </a>
+            </DirectionalLink>
           }
-          { nextApp <= 10 &&
-            <a onClick={ () => { setCurrentApp(nextApp) } }>
+          { nextApp <= 11 &&
+            <DirectionalLink onClick={ () => { setCurrentApp(nextApp) } }>
               <Link to={`/${nextApp}`}>
                 Next
               </Link>
-            </a>
+            </DirectionalLink>
           }
         </div>
         <Switch>
           <Route path='/' exact>
-            <HomeApp/>
+            <App0/>
           </Route>
 
           <Route path='/0'>
@@ -61,6 +67,7 @@ const AppWrapper = (props) => {
           <Route path='/7' component={App7}/>
           <Route path='/9' component={App9}/>
           <Route path='/10' component={App10}/>
+          <Route path='/11' component={App11}/>
         </Switch>
       </Router>
     </div>
