@@ -10,6 +10,7 @@ import App7 from './App7';
 import App9 from './App9';
 import App10 from './App10';
 import App11 from './App11';
+import App12 from './App12';
 import HomeApp from './HomeApp';
 import { Route, Switch, BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components'
@@ -26,7 +27,7 @@ const AppWrapper = (props) => {
   return(
     <div>
       <Router>
-        <div className='directionalBtns'>
+        { false && <div className='directionalBtns'>
           { backApp >= 0 &&
             <DirectionalLink onClick={ () => { setCurrentApp(backApp) } }>
               <Link to={`/${backApp}`}>
@@ -41,7 +42,7 @@ const AppWrapper = (props) => {
               </Link>
             </DirectionalLink>
           }
-        </div>
+        </div>}
         <Switch>
           <Route path='/' exact>
             <App0/>
@@ -60,7 +61,7 @@ const AppWrapper = (props) => {
             component={ () => { return <App2 {...props} /> } }
           />
 
-          <Route path='/3/:ryan' component={App3}/>
+          <Route path='/3' component={App3}/>
           <Route path='/4' component={App4}/>
           <Route path='/5' component={App5}/>
           <Route path='/6' component={App6}/>
@@ -68,6 +69,7 @@ const AppWrapper = (props) => {
           <Route path='/9' component={App9}/>
           <Route path='/10' component={App10}/>
           <Route path='/11' component={App11}/>
+          <Route path='/12' component={App12}/>
         </Switch>
       </Router>
     </div>
