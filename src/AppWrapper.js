@@ -11,6 +11,7 @@ import App9 from './App9';
 import App10 from './App10';
 import App11 from './App11';
 import App12 from './App12';
+import App13 from './App13';
 import HomeApp from './HomeApp';
 import { Route, Switch, BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components'
@@ -70,6 +71,7 @@ const AppWrapper = (props) => {
           <Route path='/10' component={App10}/>
           <Route path='/11' component={App11}/>
           <Route path='/12' component={App12}/>
+          <Route path='/13' component={App13}/>
         </Switch>
       </Router>
     </div>
