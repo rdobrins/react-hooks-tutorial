@@ -12,6 +12,7 @@ import App10 from './App10';
 import App11 from './App11';
 import App12 from './App12';
 import App13 from './App13';
+import App14 from './App14';
 import HomeApp from './HomeApp';
 import { Route, Switch, BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components'
@@ -72,6 +73,7 @@ const AppWrapper = (props) => {
           <Route path='/11' component={App11}/>
           <Route path='/12' component={App12}/>
           <Route path='/13' component={App13}/>
+          <Route path='/14' component={App14}/>
         </Switch>
       </Router>
     </div>
