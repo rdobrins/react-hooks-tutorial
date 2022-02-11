@@ -13,6 +13,7 @@ import App11 from './App11';
 import App12 from './App12';
 import App13 from './App13';
 import App14 from './App14';
+import App15 from './App15';
 import HomeApp from './HomeApp';
 import { Route, Switch, BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components'
@@ -44,7 +45,7 @@ const AppWrapper = (props) => {
               </Link>
             </DirectionalLink>
           }
-        </div>}
+        </div> }
         <Switch>
           <Route path='/' exact>
             <App0/>
@@ -74,6 +75,7 @@ const AppWrapper = (props) => {
           <Route path='/12' component={App12}/>
           <Route path='/13' component={App13}/>
           <Route path='/14' component={App14}/>
+          <Route path='/15' component={App15}/>
         </Switch>
       </Router>
     </div>
