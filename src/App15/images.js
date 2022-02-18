@@ -26,9 +26,14 @@ const SpacePic = ({ image }) => {
 const ImagesList = () => {
   const [imagesList, setImagesList] = useState([])
 
-  const { fetchImages } = useContext(ApiContext)
+  const {
+    fetchImages,
+    fetchImagesConcurrently,
+    postComment
+  } = useContext(ApiContext)
 
   const apiParams = { count: 2 }
+  const concurrentApiParams = { count: 3 }
 
   const handleResponse = (response) => {
     const { data: images } = response
@@ -44,6 +49,10 @@ const ImagesList = () => {
     fetchImages(handleResponse, apiParams)
   }
 
+  const fetchWithMultipleRequests = () => {
+    fetchImagesConcurrently(handleResponse, concurrentApiParams)
+  }
+
   if (imagesList.length === 0) return <Loading/>
 
   return(
@@ -57,6 +66,9 @@ const ImagesList = () => {
       </ul>
       <button onClick={fetchMore}>
         Fetch New Images!
+      </button>
+      <button onClick={fetchWithMultipleRequests}>
+        Trigger a concurrent request!
       </button>
     </Fragment>
   )
