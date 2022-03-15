@@ -4,7 +4,7 @@ import JSConfetti from 'js-confetti'
 
 const SelectNext = () => {
   const [nextHost, setNextHost] = useState(null)
-  const possiblesStates = ['first', 'second', 'third']
+  const possiblesStates = ['MOVE', 'THAT', 'BUS']
 
   const {
     pool,
@@ -21,6 +21,10 @@ const SelectNext = () => {
     flexDirection: 'column',
     alignItems: 'center',
     marginTop: '100px'
+  }
+
+  const nextHostStyling = {
+    fontSize: '100px'
   }
 
   const handleSelection = () => {
@@ -51,7 +55,7 @@ const SelectNext = () => {
       <button onClick={handleHype}>
         Select Host for Next Week
       </button>
-      { nextHost && <h1>{ nextHost }</h1> }
+      { nextHost && <h1 style={nextHostStyling}>{ nextHost }</h1> }
     </div>
   )
 }

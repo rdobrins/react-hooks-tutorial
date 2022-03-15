@@ -5,6 +5,7 @@ import AddToPool from './AddToPool'
 import EncodePoolState from './EncodePoolState'
 import DisplayPool from './DisplayPool'
 import SelectNext from './SelectNext'
+import KebabMenu from './KebabMenu'
 
 const App16 = () => {
   const poolWrapperStyling = {
@@ -16,13 +17,15 @@ const App16 = () => {
   return(
     <BookClubProvider>
       <div style={poolWrapperStyling}>
-        <h1>Book Club Picker</h1>
+        <h1>Host Picker</h1>
+        <h4>This is the way</h4>
         <SetInitialPool/>
         <AddToPool/>
         <DisplayPool/>
         <SelectNext/>
         <EncodePoolState/>
       </div>
+      <KebabMenu/>
     </BookClubProvider>
   )
 }

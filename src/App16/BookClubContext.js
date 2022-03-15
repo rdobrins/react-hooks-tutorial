@@ -7,6 +7,8 @@ export const BookClubProvider = (props) => {
   const { children } = props
 
   const [pool, setPool] = useState([])
+  const [kebabId, setKebabId] = useState(null)
+  const [kebabCoordinates, setKebabCoordinates] = useState({ x: 0, y: 0 })
 
   const addToPool = (newValue) => {
     const newValueHash = { name: newValue, count: 1 }
@@ -69,6 +71,19 @@ export const BookClubProvider = (props) => {
   const removeFromPool = (poolItem) => {
     let filteredPool = pool.filter((n) => { return n.name !== poolItem.name })
     setPool(filteredPool)
+    setKebabId(null)
+  }
+
+  const toggleKebab = (event, poolItem) => {
+    const { clientX: x, clientY: y } = event
+    const newItem = poolItem.name !== kebabId
+
+    if (newItem) {
+      setKebabCoordinates({ x: x, y: y })
+      setKebabId(poolItem.name)
+    } else {
+      setKebabId(null)
+    }
   }
 
   return(
@@ -81,7 +96,10 @@ export const BookClubProvider = (props) => {
       pool,
       addToCount,
       selectFromPool,
-      removeFromPool
+      removeFromPool,
+      toggleKebab,
+      kebabId,
+      kebabCoordinates
     }}>
       {children}
     </BookClubContext.Provider>
