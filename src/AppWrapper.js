@@ -16,7 +16,8 @@ const AppWrapper = (props) => {
   const {
     App0, App1, App2, App3, App4,
     App5, App6, App7, App9, App10, App11,
-    App12, App13, App14, App15, App16, App17
+    App12, App13, App14, App15, App16, App17,
+    App18, App19
   } = app
 
   return(
@@ -70,6 +71,8 @@ const AppWrapper = (props) => {
           <Route path='/15' component={App15}/>
           <Route path='/16' component={App16}/>
           <Route path='/17' component={App17}/>
+          <Route path='/18' component={App18}/>
+          <Route path='/19' component={App19}/>
         </Switch>
       </Router>
     </div>

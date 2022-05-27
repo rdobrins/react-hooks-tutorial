@@ -15,5 +15,7 @@ import App14 from './App14';
 import App15 from './App15';
 import App16 from './App16';
 import App17 from './App17';
+import App18 from './App18';
+import App19 from './App19';
 
-export { App0, App1, App2, App3, App4, App5, App6, App7, App9, App10, App11, App12, App13, App14, App15, App16, App17 }
+export { App0, App1, App2, App3, App4, App5, App6, App7, App9, App10, App11, App12, App13, App14, App15, App16, App17, App18, App19 }
