@@ -16,7 +16,7 @@ const BreedsDropdown = (props) => {
       api_key: API_KEY
     }
 
-    return axiosClient.get(BREEDS_SUB_DIRECTORY, params)
+    return axiosClient.get(BREEDS_SUB_DIRECTORY, { params: params })
   }
 
   const handleResponse = (response, callback) => {

@@ -18,7 +18,7 @@ const GetCat = ({ setImage, breed }) => {
       breed_ids: breed
     }
 
-    return axiosClient.get(IMAGES_SUB_DIRECTORY, params)
+    return axiosClient.get(IMAGES_SUB_DIRECTORY, { params: params })
   }
 
   const handleResponse = (response, callback) => {
