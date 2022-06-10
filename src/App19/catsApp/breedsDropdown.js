@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Select from 'react-select'
 import { axiosClient } from './client'
+import { CatsContext } from './catsContext'
 import {
   BREEDS_SUB_DIRECTORY,
   API_KEY
 } from './env'
 
-const BreedsDropdown = (props) => {
-  const { breed, setBreed } = props
+const BreedsDropdown = () => {
+  const { breed, setBreed } = useContext(CatsContext)
 
   const [breedsList, setBreedsList] = useState([])
 
@@ -38,7 +39,7 @@ const BreedsDropdown = (props) => {
   }, [])
 
   const handleChange = (option) => {
-    const { value } = option
+    const { value } = option || { value: null }
 
     setBreed(value)
   }
@@ -47,6 +48,7 @@ const BreedsDropdown = (props) => {
     <Select
       options={breedsList}
       onChange={(v) => { handleChange(v) }}
+      isClearable
     />
   )
 }

@@ -11,17 +11,15 @@ export const ApiContext = createContext()
 export const ApiProvider = (props) => {
   const { children } = props
 
-  const fetchCat = (params, handleResponse) => {
-    return axiosClient.get(
-      IMAGES_SUB_DIRECTORY,
-      { params: { ...params, api_key: API_KEY } }
-    ).then(response => { handleResponse(response) })
-     .catch(error => { console.log(error) })
+  const fetchCats = (params, handleResponse) => {
+    return axiosClient.get(IMAGES_SUB_DIRECTORY, { params: { ...params, api_key: API_KEY } })
+      .then(response => { handleResponse(response) })
+      .catch(error => { console.log(error) })
   }
 
   return(
     <ApiContext.Provider value={{
-      fetchCat
+      fetchCats
     }}>
       {children}
     </ApiContext.Provider>

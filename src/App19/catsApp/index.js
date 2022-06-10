@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
-import DisplayCat from './display'
+import React from 'react'
+import DisplayCats from './display'
 import GetCat from './fetch'
 import BreedsDropdown from './breedsDropdown'
 import { CatsAppWrapper } from '../shared/styles'
+import { ApiProvider } from './apiContext'
+import { CatsProvider } from './catsContext'
 
-const CatsApp = () => {
-  const [image, setImage] = useState(null)
-  const [breed, setBreed] = useState(null)
-
-  return(
-    <CatsAppWrapper>
-      <BreedsDropdown breed={breed} setBreed={setBreed} />
-      <GetCat breed={breed} setImage={setImage} />
-      { image && <DisplayCat image={image}/> }
+const CatsApp = () => (
+  <ApiProvider>
+    <CatsProvider>
+      <CatsAppWrapper>
+      <BreedsDropdown/>
+      <GetCat/>
+      <DisplayCats/>
     </CatsAppWrapper>
-  )
-}
+    </CatsProvider>
+  </ApiProvider>
+)
 
 export default CatsApp

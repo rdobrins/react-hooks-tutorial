@@ -1,34 +1,37 @@
 import React, { useContext } from 'react'
 import { GetCatButton } from '../shared/styles'
 import { ThemeContext } from '../themeContext'
-import { ApiContext } from './context'
+import { ApiContext } from './apiContext'
+import { CatsContext } from './catsContext'
 
-const GetCat = ({ setImage, breed }) => {
+const GetCat = () => {
+  const { setImages, breed } = useContext(CatsContext)
   const { darkMode } = useContext(ThemeContext)
-  const { fetchCat } = useContext(ApiContext)
+  const { fetchCats } = useContext(ApiContext)
 
   const textColor = darkMode ? '#000' : '#fff'
 
-  const handleResponse = (response, callback) => {
+  const handleResponse = (response) => {
     const { data } = response
 
-    callback(...data)
+    setImages(data)
   }
 
-  const handleFetch = (e, callback) => {
+  const handleFetch = (e) => {
     e.preventDefault()
 
     const params = {
-      breed_ids: breed
+      breed_ids: breed,
+      limit: 3
     }
 
-    fetchCat(params, handleResponse)
+    fetchCats(params, handleResponse)
   }
 
   return(
     <GetCatButton
       textColor={textColor}
-      onClick={(e) => { handleFetch(e, setImage) }}
+      onClick={(e) => { handleFetch(e) }}
     >
       Get Cat
     </GetCatButton>
