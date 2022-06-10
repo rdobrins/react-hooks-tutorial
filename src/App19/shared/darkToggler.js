@@ -1,6 +1,6 @@
 import React, { useContext, Fragment } from 'react'
 import { IconWrapper } from './styles'
-import { ThemeContext } from '../context'
+import { ThemeContext } from '../themeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faMoon,

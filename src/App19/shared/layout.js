@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { LayoutWrapper } from './styles'
 import Header from './header'
-import { ThemeContext } from '../context'
+import { ThemeContext } from '../themeContext'
 
 const Layout = (props) => {
   const { children } = props

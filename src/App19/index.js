@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from './shared/layout'
 import CatsApp from './catsApp'
 import { ContentWrapper } from './shared/styles'
-import { ThemeProvider } from './context'
+import { ThemeProvider } from './themeContext'
 
 const App19 = () => {
   return(
