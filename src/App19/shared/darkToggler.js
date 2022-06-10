@@ -10,7 +10,7 @@ import {
 const DarkModeToggler = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext)
 
-  const iconColor = darkMode ? '#fff' : '#fff'
+  const iconColor = darkMode ? '#FFF9A6' : '#ADD8E6'
 
   return(
     <IconWrapper color={iconColor}>
