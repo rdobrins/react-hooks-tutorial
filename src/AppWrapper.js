@@ -40,13 +40,7 @@ const AppWrapper = (props) => {
           }
         </div> }
         <Switch>
-          <Route path='/' exact>
-            <App0/>
-          </Route>
-
-          <Route path='/0'>
-            <App0/>
-          </Route>
+          <Route path='/' exact component={App0}/>
 
           <Route path='/1' component={App1}>
             <App1 {...props} />

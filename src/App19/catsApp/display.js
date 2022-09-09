@@ -14,7 +14,7 @@ const Display = () => {
         const { url } = i
 
         return(
-          <ImageWrapper>
+          <ImageWrapper key={url}>
             <img src={url} />
           </ImageWrapper>
         )

@@ -1,7 +1,11 @@
-import React, {useState} from 'react';
+import React, { Fragment, useState } from 'react';
 import './App.css';
+import DirectoryHash from './AppsDirectoryHash'
+import { Link } from 'react-router-dom'
 
-function App0(props) {
+const App0 = (props) => {
+  const { path } = props.match
+
   return (
     <>
       <h1 className="intro-header">
@@ -14,6 +18,19 @@ function App0(props) {
         <br/><br/>
         Functional Components?!?!?! :)
       </h2>
+      <div className="directory-wrapper">
+        { Object.keys(DirectoryHash).map((k, i) => {
+
+          const { title, description } = DirectoryHash[k]
+
+          return(
+            <Fragment>
+              <Link key={k} to={`${path}${k}`}>{`${(i + 1)}. ${title}`}</Link>
+              <p>{description}</p>
+            </Fragment>
+          )
+        }) }
+      </div>
     </>
   );
 }
