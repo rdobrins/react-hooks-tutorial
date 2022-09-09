@@ -22,7 +22,7 @@ const GetCat = () => {
 
     const params = {
       breed_ids: breed,
-      limit: 3
+      limit: 2
     }
 
     fetchCats(params, handleResponse)

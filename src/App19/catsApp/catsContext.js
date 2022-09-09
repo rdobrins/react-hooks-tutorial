@@ -20,7 +20,7 @@ export const CatsProvider = (props) => {
   const handleBreedChange = () => {
     const params = {
       breed_ids: breed,
-      limit: 3
+      limit: 2
     }
 
     fetchCats(params, handleBreedChangeResponse)

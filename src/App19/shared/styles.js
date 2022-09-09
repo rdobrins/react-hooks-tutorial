@@ -44,6 +44,11 @@ export const CatsAppWrapper = styled.div`
   flex-direction: column;
 `
 
+export const ImagesWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
 export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;

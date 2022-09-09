@@ -1,12 +1,15 @@
 import React, { useContext, Fragment } from 'react'
-import { ImageWrapper } from '../shared/styles'
+import {
+  ImageWrapper,
+  ImagesWrapper
+} from '../shared/styles'
 import { CatsContext } from './catsContext'
 
 const Display = () => {
   const { images } = useContext(CatsContext)
 
   return(
-    <Fragment>
+    <ImagesWrapper>
       { images.map(i => {
         const { url } = i
 
@@ -16,7 +19,7 @@ const Display = () => {
           </ImageWrapper>
         )
       }) }
-    </Fragment>
+    </ImagesWrapper>
   )
 }
 
