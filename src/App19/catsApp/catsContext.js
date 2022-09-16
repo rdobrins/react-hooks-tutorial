@@ -4,12 +4,12 @@ import { ApiContext } from './apiContext'
 export const CatsContext = createContext()
 
 export const CatsProvider = (props) => {
-  const { children } = props
+  const { children, breed = null } = props
 
   const { fetchCats } = useContext(ApiContext)
 
   const [images, setImages] = useState([])
-  const [breed, setBreed] = useState(null)
+  // const [breed, setBreed] = useState(newBreed)
 
   const handleBreedChangeResponse = (response) => {
     const { data } = response
@@ -34,8 +34,7 @@ export const CatsProvider = (props) => {
     <CatsContext.Provider value={{
       images,
       setImages,
-      breed,
-      setBreed
+      breed
     }}>
       {children}
     </CatsContext.Provider>

@@ -3,11 +3,12 @@ import * as styles from './App12/styles'
 
 import { Switch, Route, Link } from 'react-router-dom'
 
+import NonLazyHamburglar from './App12/Hamburglar'
 const Default = lazy(() => import('./App12/Default'))
 const Chester = lazy(() => import('./App12/Chester'))
 const Chiquita = lazy(() => import('./App12/Chiquita'))
 const Grimace = lazy(() => import('./App12/Grimace'))
-const Hamburglar = lazy(() => import('./App12/Hamburglar'))
+// const Hamburglar = lazy(() => import('./App12/Hamburglar'))
 
 const App12 = (props) => {
   const { path } = props.match
@@ -35,7 +36,7 @@ const App12 = (props) => {
           <Route path={`${path}/chester`} component={Chester} />
           <Route path={`${path}/chiquita`} component={Chiquita} />
           <Route path={`${path}/grimace`} component={Grimace} />
-          <Route path={`${path}/hamburglar`} component={Hamburglar} />
+          <Route path={`${path}/hamburglar`} component={NonLazyHamburglar} />
         </Switch>
       </Suspense>
 
